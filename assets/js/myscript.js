@@ -9,42 +9,42 @@ const team = [
     {
         nome : "Wayne Barnett",
         ruolo : "Founder e Ceo",
-        foto : "wayne-barnett-founder-ceo.jpg"
+        foto : "./assets/img/wayne-barnett-founder-ceo.jpg"
 
     },
 
     {
         nome : "Angela Caroll",
         ruolo : "Chief Editor",
-        foto : "angela-caroll-chief-editor.jpg"
+        foto : "./assets/img/angela-caroll-chief-editor.jpg"
 
     },
 
     {
         nome : "Walter Gordon",
         ruolo : "Office Manager",
-        foto : "walter-gordon-office-manager.jpg"
+        foto : "./assets/img/walter-gordon-office-manager.jpg"
 
     },
 
     {
         nome : "Angela Lopez",
         ruolo : "Social Media Manager",
-        foto : "angela-lopez-social-media-manager.jpg"
+        foto : "./assets/img/angela-lopez-social-media-manager.jpg"
 
     },
 
     {
         nome : "Scott Estrada",
         ruolo : "Developer",
-        foto : "scott-estrada-developer.jpg"
+        foto : "./assets/img/scott-estrada-developer.jpg"
 
     },
 
     {
         nome : "Barbara Ramos",
         ruolo : "Graphic Designer",
-        foto : "barbara-ramos-graphic-designer.jpg"
+        foto : "./assets/img/barbara-ramos-graphic-designer.jpg"
 
     },
 
@@ -55,12 +55,36 @@ Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e 
 
 ];
 
+const printElement = document.querySelector('.print')
+console.log(printElement);
+
 for (let i = 0; i < team.length; i++) {
     const allTeam = team[i];
     console.log(allTeam);
 
 
     for (const memberTeam in allTeam) {
+     
+
         console.log(allTeam[memberTeam]);
     }
+    
+    //Trasformare la stringa foto in una immagine effettiva
+    const markup = `<div class="card text-start">
+    <img class="card-img-top w-25" src="${allTeam.foto}"  alt="Title">
+    <div class="card-body">
+      <h4 class="card-title">${allTeam.nome}</h4>
+      <p class="card-text">${allTeam.ruolo}</p>
+    </div>
+  </div>
+`
+/* 
+MILESTONE 2:
+Stampare le stesse informazioni su DOM sottoforma di stringhe
+*/
+
+printElement.insertAdjacentHTML("beforeend",markup)
 }
+
+
+
