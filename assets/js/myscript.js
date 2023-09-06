@@ -71,10 +71,10 @@ for (let i = 0; i < team.length; i++) {
     
     //Trasformare la stringa foto in una immagine effettiva
     const markup = `<div class="card text-start">
-    <img class="card-img-top w-25" src="${allTeam.foto}"  alt="Title">
-    <div class="card-body">
+    <img class="card-img-top w-100" src="${allTeam.foto}"  alt="Title">
+    <div class="card-body bg-me">
       <h4 class="card-title">${allTeam.nome}</h4>
-      <p class="card-text">${allTeam.ruolo}</p>
+      <p class="card-text text-danger fs-5">${allTeam.ruolo}</p>
     </div>
   </div>
 `
@@ -86,5 +86,10 @@ Stampare le stesse informazioni su DOM sottoforma di stringhe
 printElement.insertAdjacentHTML("beforeend",markup)
 }
 
-
+/*
+BONUS 1:
+Trasformare la stringa foto in una immagine effettiva // inserito nel markup
+BONUS 2:
+Organizzare i singoli membri in card/schede  inserito nel markup
+*/
 
